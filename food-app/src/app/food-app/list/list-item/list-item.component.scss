@@ -1,0 +1,28 @@
+.list {
+  &-item {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    &:hover button {
+      opacity: 1;
+    }
+
+    button {
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
+      padding: 10px 15px;
+      color: #0000ff;
+      font-size: 20px;
+      opacity: 0;
+      border-radius: 10px;
+      transition: all 0.3s ease 0s;
+      z-index: 99;
+    }
+  }
+}
