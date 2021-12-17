@@ -1,0 +1,31 @@
+<ng-template ngFor let-item [ngForOf]="foodCart">
+  <div [id]="item.id" class="cart-item">
+    <div class="cart-item_image">
+      <img src="assets/{{ item.image }}" [alt]="item.name" />
+    </div>
+    <div class="cart-item_price">
+      <h3>{{ item.name }}</h3>
+      <div *ngFor="let childItem of item.topping">
+        <h4>{{ childItem.name }}</h4>
+        <input
+          type="number"
+          min="1"
+          max="10"
+          (change)="onChangeAmount($event.target.value, item.id, childItem.id)"
+          [(value)]="childItem.amount"
+        />
+        x {{ childItem.price | currency }}
+      </div>
+      <div class="action">
+        <button class="btn btn-minus" (click)="minusCartItem(item)">-</button>
+        <span class="amount">
+          x {{ item.amount }}*{{ item.price | currency }}</span
+        >
+        <button class="btn btn-plus" (click)="plusCartItem(item)">+</button>
+      </div>
+      <button class="btn btn-trash trash" (click)="onDeleteCartData(item.id)">
+        <img src="assets/images/trash.png" alt="trash" />
+      </button>
+    </div>
+  </div>
+</ng-template>

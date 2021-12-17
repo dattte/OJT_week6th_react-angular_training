@@ -1,0 +1,7 @@
+<ng-template ngFor let-listItem [ngForOf]="foodList">
+  <div [id]="listItem.id" class="list-item">
+    <img src="assets/{{ listItem.image }}" [alt]="listItem.name" />
+
+    <button (click)="onAddCart(listItem)">+</button>
+  </div></ng-template
+>

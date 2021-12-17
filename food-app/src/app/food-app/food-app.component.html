@@ -1,0 +1,26 @@
+<app-menu></app-menu>
+<div class="food-body">
+  <div class="food-body__list">
+    <h2>Food List</h2>
+    <div class="list">
+      <app-list></app-list>
+    </div>
+  </div>
+
+  <div class="food-body__cart">
+    <h2>Your Cart</h2>
+    <div class="cart">
+      <div *ngIf="!isValid" class="cart-list">
+        <!-- <EmtyCart /> -->
+      </div>
+
+      <div *ngIf="isValid" class="cart-list">
+        <app-cart></app-cart>
+      </div>
+
+      <div class="cart-payment">
+        <app-payment></app-payment>
+      </div>
+    </div>
+  </div>
+</div>
